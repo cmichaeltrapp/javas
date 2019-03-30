@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+ 
+  <script>
+     /*  
+   *  Input nonw
+   *  Processing  create arrays and populate them
+   *  Output  count how many evens and display it
+   *  Take another one and multiply every element in it.
+   */
+   function countEvens(list) {
+      var evens = 0;
+     for ( var i = 0; i < list.length; i++)
+      if (list[i] % 2 == 0) {
+          evens++;
+      }
+        return(evens);
+   }
+
+   function multiply(list, multy) {
+        var tmp; 
+       for (var i = 0; i<list.length; i++){
+         tmp = list[i];
+         list[i] = tmp * multy;
+       }
+       return(list);
+   }
+
+   function ramp(list)  {
+     for ( var i = 0; i < list.length-1; i++ ) {
+       list[i] = 4 + i;
+     }
+     list[list.length-1] = 10;
+   }
+
+   function testBoth() {
+
+    newArray1 = new  Array(10);
+    newArray2 = new  Array(10);
+      
+      newArray1=[2,4,6,8,6,7,8,9,10];
+      newArray2=[1,3,5,7,9,11,13,15,17,19];
+     
+
+      var evens1 = countEvens(newArray1);
+      var array2 = multiply(newArray2,7);
+
+
+      document.getElementById('evens').innerHTML=evens1;
+      document.getElementById('multee').innerHTML=array2;
+
+
+
+
+   }
+  </script>
+</head>
+<body>
+  <button type="button" onclick="testBoth()">Calculate the Arrays</button>
+  <br>
+  Evens <div id="evens"></div>
+  Array2 <div id="multee"></div>
+
+</body>
+</html>
